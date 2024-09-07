@@ -1,5 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { Textarea } from "./ui/textarea";
 
 const defaultFormState = {
   name: {
@@ -26,10 +29,10 @@ export const Contact = () => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <div className="flex flex-col md:flex-row justify-between gap-5">
-        <input
+        <Input
           type="text"
           placeholder="Your Name"
-          className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 py-2 rounded-md text-sm text-neutral-700 w-full"
+          className=" focus:outline-none focus:ring-2  px-2 py-2 dark:bg-[#020617] rounded-md text-sm  w-full"
           value={formData.name.value}
           onChange={(e) => {
             setFormData({
@@ -41,10 +44,10 @@ export const Contact = () => {
             });
           }}
         />
-        <input
+        <Input
           type="email"
           placeholder="Your email address"
-          className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 py-2 rounded-md text-sm text-neutral-700 w-full"
+          className=" focus:outline-none focus:ring-2   px-2 py-2 rounded-md text-sm  w-full"
           value={formData.email.value}
           onChange={(e) => {
             setFormData({
@@ -58,10 +61,10 @@ export const Contact = () => {
         />
       </div>
       <div>
-        <textarea
+        <Textarea
           placeholder="Your Message"
           rows={10}
-          className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 mt-4 py-2 rounded-md text-sm text-neutral-700 w-full"
+          className="focus:outline-none focus:ring-2  px-2 mt-4 py-2 rounded-md text-sm  w-full"
           value={formData.message.value}
           onChange={(e) => {
             setFormData({
@@ -74,12 +77,12 @@ export const Contact = () => {
           }}
         />
       </div>
-      <button
-        className="w-full px-2 py-2 mt-4 bg-neutral-100 rounded-md font-bold text-neutral-500"
+      <Button
+        className="w-full px-2 py-2 mt-4 rounded-md font-bold "
         type="submit"
       >
         Submit{" "}
-      </button>
+      </Button>
     </form>
   );
 };

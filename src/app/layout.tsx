@@ -4,6 +4,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import { Footer } from "@/components/Footer";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+import { ThemeProvider } from "@/components/theme-provider";
+import { SheetMenu } from "@/components/SheetMenu";
+import Header from "@/components/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,16 +29,26 @@ export default function RootLayout({
       <body
         className={twMerge(
           inter.className,
-          "flex antialiased h-screen overflow-hidden bg-gray-100",
+          " antialiased  bg-gray-100 dark:bg-slate-950",
         )}
       >
-        <Sidebar />
-        <div className="lg:pl-2 lg:pt-2 bg-gray-100 flex-1 overflow-y-auto">
-          <div className="flex-1 bg-white min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200 overflow-y-auto">
-            {children}
-            <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <div>
+            <div className="lg:pl-2 mx-auto container lg:pt-2 bg-gray-100 dark:bg-slate-950 flex-1 overflow-y-auto">
+              <div className="flex-1 bg-white dark:bg-slate-950 min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200 lg:border-transparent overflow-y-auto">
+                <div className="flex items-end w-full justify-end p-4"></div>
+                {children}
+                <Footer />
+              </div>
+            </div>
           </div>
-        </div>
+        </ThemeProvider>
       </body>
     </html>
   );
