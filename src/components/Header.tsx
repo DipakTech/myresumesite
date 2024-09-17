@@ -7,9 +7,9 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <div className="mx-auto flex py-2 w-full container fixed flex-1 overflow-hidden dark:text-slate-900 z-50">
+    <div className="mx-auto   inset-x-0 flex py-2 w-full container fixed flex-1 overflow-hidden dark:text-slate-900 z-50">
       <div className="z-0 flex-1 overflow-y-scroll">
-        <header className="fixed inset-x-0 flex h-10 shadow backdrop-blur-md">
+        <header className="fixed max-w-5xl    mx-auto inset-x-0 flex h-10 shadow backdrop-blur-md">
           <div className="mx-auto flex w-full  items-center justify-between px-8">
             <SheetMenu />
             <p

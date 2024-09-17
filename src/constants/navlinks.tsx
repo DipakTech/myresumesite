@@ -17,11 +17,11 @@ export const navlinks = [
     label: "About",
     icon: IconMessage2,
   },
-  // {
-  //   href: "/projects",
-  //   label: "Projects",
-  //   icon: IconBriefcase2,
-  // },
+  {
+    href: "/recent-blogs",
+    label: "Recent Blogs",
+    icon: IconBriefcase2,
+  },
   // {
   //   href: "/blog",
   //   label: "Articles",
