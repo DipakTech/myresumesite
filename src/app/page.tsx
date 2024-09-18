@@ -14,6 +14,32 @@ import Link from "next/link";
 
 const BLUR_FADE_DELAY = 0.04;
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dipak Giri | portfolio",
+  description: "Dipak Giri's cv, portfolio and recent blogs",
+  openGraph: {
+    title: "Dipak Giri | portfolio",
+    description: "Dipak Giri's cv, portfolio and recent blogs",
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_URL}/api/og?title=Dipak%20Giri&description=Dipak%20Giri%27s%20Portfolio&dark=true`,
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dipak Giri | portfolio",
+    description: "Dipak Giri's cv, portfolio and recent blogs",
+    images: [
+      `${process.env.NEXT_PUBLIC_URL}/api/og?title=Dipak%20Giri&description=Dipak%20Giri%27s%20Portfolio&dark=true&twitter=true`,
+    ],
+  },
+};
+
 export default function Home() {
   return (
     <Container className="flex flex-col min-h-[100dvh] space-y-10">
