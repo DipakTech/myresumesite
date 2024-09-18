@@ -8,6 +8,9 @@ import { DATA } from "./data/resume";
 import { ResumeCard } from "@/components/resume-card";
 import { Badge } from "@/components/ui/badge";
 import { ProjectCard } from "@/components/project-card";
+import { CerticationCard } from "@/components/certification-card";
+import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -129,6 +132,39 @@ export default function Home() {
               </BlurFade>
             ))}
           </div>
+        </div>
+      </section>
+      <section id="Certifications">
+        <div className="space-y-12 w-full ">
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <h2 className="text-xl font-bold">Cerfications</h2>
+          </BlurFade>
+          {DATA.certification.map((certificate, id) => (
+            <BlurFade
+              key={certificate.href}
+              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+            >
+              <CerticationCard
+                course={certificate.course}
+                date={certificate.date}
+                href={certificate.href}
+                logoUrl={certificate.logoUrl}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      <section id="Contact me">
+        <div className="space-y-4 w-full ">
+          <Separator />
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <h2 className="text-xl font-bold">Contact me</h2>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 8 + 1 * 0.05}>
+            <Link href="mailto:dipakgiri1200@gmail.com">
+              dipakgiri1200@gmail.com
+            </Link>
+          </BlurFade>
         </div>
       </section>
     </Container>
