@@ -257,7 +257,7 @@ export const DATA = {
     },
     {
       title: "blogging and cover letter generator platform",
-      href: "https://dipakgiri12.com.np/blog",
+      href: "https://dipakgiri12.com.np/blogs",
       dates: "April 2023 - March 2024",
       active: true,
       description:

@@ -26,7 +26,7 @@ export const Blogs = ({ blogs }: { blogs: Blog[] }) => {
         >
           <Link
             key={`blog-${blog.title}`}
-            href={`/blog/${blog.slug}`}
+            href={`https://dipakgiri12.com.np/blogs/${blog.slug}`}
             className="relative my-10 block"
             onMouseEnter={() => setHovered(blog.slug)}
             onMouseLeave={() => setHovered(null)}
@@ -50,13 +50,13 @@ export const Blogs = ({ blogs }: { blogs: Blog[] }) => {
                     scaleX: 0.95,
                     scaleY: 0.95,
                   }}
-                  className="absolute z-0 pointer-events-none bg-gray-50 inset-0 h-full w-full   rounded-md "
+                  className="absolute z-0 pointer-events-none inset-0 h-full w-full   rounded-md "
                 />
               )}
             </AnimatePresence>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative z-20">
               <Image
-                src={blog.image}
+                src={blog.thumbnail}
                 alt="thumbnail"
                 height="200"
                 width="200"
@@ -67,10 +67,10 @@ export const Blogs = ({ blogs }: { blogs: Blog[] }) => {
                 <Heading className="text-lg md:text-lg lg:text-lg">
                   {blog.title}
                 </Heading>
-                <Paragraph className="text-sm md:text-sm lg:text-sm mt-2">
+                {/* <Paragraph className="text-sm md:text-sm lg:text-sm mt-2">
                   {blog.description}
-                </Paragraph>
-                <div className="flex space-x-2 flex-wrap mt-4">
+                </Paragraph> */}
+                {/* <div className="flex space-x-2 flex-wrap mt-4">
                   {blog.tags?.map((tag, index) => (
                     <span
                       key={`tag-${blog.slug}`}
@@ -79,7 +79,7 @@ export const Blogs = ({ blogs }: { blogs: Blog[] }) => {
                       {tag}
                     </span>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
           </Link>

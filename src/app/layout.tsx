@@ -8,6 +8,7 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SheetMenu } from "@/components/SheetMenu";
 import Header from "@/components/Header";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -48,6 +49,7 @@ export default function RootLayout({
               </div>
             </div>
           </div>
+          <GoogleAnalytics gaId="G-ZSM3T3YV9V" />
         </ThemeProvider>
       </body>
     </html>
