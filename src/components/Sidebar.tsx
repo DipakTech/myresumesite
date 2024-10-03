@@ -31,7 +31,7 @@ export const Sidebar = () => {
           <div>
             {/* <Badge href="/resume" text="Read Resume" /> */}
             <Badge
-              href="https://www.dipakgiree.com.np/Dipak-giri-resume.pdf"
+              href="https://portfolio.dipakgiri12.com.np/resume/Dipak_Giri_Resume.pdf"
               text="Read Resume"
             />
           </div>
