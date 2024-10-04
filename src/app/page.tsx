@@ -45,11 +45,6 @@ export default function Home() {
     <Container className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
         <HelloText />
-        <Paragraph className="max-w-xl mt-4 text-primary">
-          I&apos;m a software engineer with{" "}
-          <Highlight>2.5 years of experience</Highlight> building scalable web
-          apps that are performance optimized and good looking.
-        </Paragraph>
       </section>
 
       <section id="work">
@@ -77,11 +72,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* <section id="techstack" className="flex items-end">
-        <TechStack />
-      </section> */}
-
       <section id="education">
         <div className="flex min-h-0 pr-10 flex-col gap-y-2">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -161,7 +151,7 @@ export default function Home() {
         </div>
       </section>
       <section id="Certifications">
-        <div className="space-y-12 w-full ">
+        <div className="space-y-6 w-full ">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <h2 className="text-xl font-bold">Cerfications</h2>
           </BlurFade>
@@ -187,9 +177,12 @@ export default function Home() {
             <h2 className="text-xl font-bold">Contact me</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 8 + 1 * 0.05}>
-            <Link href="mailto:dipakgiri1200@gmail.com">
-              dipakgiri1200@gmail.com
-            </Link>
+            <div className="flex gap-2">
+              <Link href="mailto:dipakgiri1200@gmail.com">
+                dipakgiri1200@gmail.com
+              </Link>
+              <Link href="https://github.com/dipaktech">| github</Link>
+            </div>
           </BlurFade>
         </div>
       </section>

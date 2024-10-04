@@ -19,7 +19,7 @@ export const CerticationCard = ({
   return (
     <Link href={href || "#"} className="block cursor-pointer">
       <Card className="flex ">
-        <div className="flex-grow ml-2 items-center flex-col group">
+        <div className="flex-grow items-center flex-col group">
           <CardHeader className="p-0">
             <div className="flex items-center justify-between gap-x-2 text-base">
               <h3 className="inline-flex items-center justify-center font-semibold leading-none text-xs sm:text-sm">
