@@ -2,6 +2,8 @@ import BlurFade from "./BlurFade";
 import { Highlight } from "./Highlight";
 import { Paragraph } from "./Paragraph";
 
+import React from "react";
+
 export function HelloText() {
   return (
     <section id="header">

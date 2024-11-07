@@ -1,3 +1,5 @@
+import React from "react";
+
 export const ButtonCTA = () => {
   return (
     <div className="absolute top-0 inset-x-0  flex justify-center">

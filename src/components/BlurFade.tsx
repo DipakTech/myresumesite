@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef } from "react";
+import React from "react";
+
 import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
 
 // type MarginType = UseInViewOptions["margin"];

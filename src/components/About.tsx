@@ -1,6 +1,7 @@
 "use client";
 import { Paragraph } from "@/components/Paragraph";
 import Image from "next/image";
+import React from "react";
 
 import { motion } from "framer-motion";
 

@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import React from "react";
 
 interface Props {
   title: string;

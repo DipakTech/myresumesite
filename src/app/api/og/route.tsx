@@ -1,4 +1,5 @@
-import { ImageResponse } from "next/server";
+import React from "react";
+import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
 export const runtime = "edge";

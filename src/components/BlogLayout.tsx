@@ -8,6 +8,7 @@ import { Container } from "./Container";
 import { Heading } from "./Heading";
 import Link from "next/link";
 import { Paragraph } from "./Paragraph";
+import React from "react";
 
 function ArrowLeftIcon(props: any) {
   return (
