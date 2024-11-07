@@ -13,7 +13,7 @@ import { Sidebar } from "./Sidebar";
 
 export function SheetMenu() {
   return (
-    <Sheet defaultOpen>
+    <Sheet defaultOpen={false}>
       <SheetTrigger className="z-50" asChild>
         <Button className="h-8 text-primary " variant="outline" size="icon">
           <MenuIcon size={20} />
