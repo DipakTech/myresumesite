@@ -30,10 +30,7 @@ export const Sidebar = () => {
           </div>
           <div>
             {/* <Badge href="/resume" text="Read Resume" /> */}
-            <Badge
-              href="https://portfolio.dipakgiri12.com.np/resume/Dipak_Giri_Resume.pdf"
-              text="Read Resume"
-            />
+            <Badge href="/resume/Dipak_Giri_Resume.pdf" text="Read Resume" />
           </div>
         </motion.div>
       </AnimatePresence>
@@ -96,7 +93,7 @@ const SidebarHeader = () => {
   return (
     <div className="flex space-x-2">
       <Image
-        src="https://www.dipakgiree.com.np/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FDipakGiri.1979d6c1.png&w=640&q=75"
+        src="/dipak/second.jpg"
         alt="Avatar"
         height="40"
         width="40"
