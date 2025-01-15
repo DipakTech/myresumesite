@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { SheetMenu } from "@/components/SheetMenu";
 import Header from "@/components/Header";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,6 +53,11 @@ export default function RootLayout({
           <GoogleAnalytics gaId="G-ZSM3T3YV9V" />
         </ThemeProvider>
       </body>
+      <Script
+        defer
+        src="https://analytics.oneclickresult.com/script.js"
+        data-website-id="1fbce566-c2de-4831-96f9-e1558987bce5"
+      />
     </html>
   );
 }
