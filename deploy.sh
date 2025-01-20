@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOMAIN_NAME="portfolio.dipakgiri12.dom.np"
+DOMAIN_NAME=141.148.198.201
 EMAIL="dipakgiri.dev@gmail.com"
 NEXT_PUBLIC_URL='https://portfolio.dipakgiri12.com.np/'
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=AIzaSyB4A1B_03Y1RgcsWCVIr4-v-icbhPd7NlY
@@ -110,7 +110,7 @@ server {
         proxy_set_header X-Accel-Buffering no;
     }
 
-    
+
 }
 EOL
 

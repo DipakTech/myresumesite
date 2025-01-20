@@ -1,26 +1,11 @@
-version: '3'
+version: "3.8"
 services:
   web-service:
     build:
       context: .
+      dockerfile: Dockerfile
     ports:
-      - 5000:5000
+      - "3000:3000"
     env_file:
       - .env
-
     restart: unless-stopped
-    # depends_on:
-      # - backend
-  # backend:
-  #   build:
-  #     context: ./backend/
-  #   ports:
-  #     - 8080:8080
-  #   restart: unless-stopped
-        #nginx:
-        #image: hh-ngninx80
-        #ports:
-        #- '80:80'
-        #depends_on:
-        #- frontend
-
