@@ -1,20 +1,26 @@
-version: "3.8"
+version: '3'
 services:
   web-service:
     build:
       context: .
-      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - 5000:5000
     env_file:
       - .env
-    networks:
-      - app-network
-    restart: unless-stopped
-    depends_on:
-      - backend
 
- 
-networks:
-  app-network:
-    driver: bridge
+    restart: unless-stopped
+    # depends_on:
+      # - backend
+  # backend:
+  #   build:
+  #     context: ./backend/
+  #   ports:
+  #     - 8080:8080
+  #   restart: unless-stopped
+        #nginx:
+        #image: hh-ngninx80
+        #ports:
+        #- '80:80'
+        #depends_on:
+        #- frontend
+
