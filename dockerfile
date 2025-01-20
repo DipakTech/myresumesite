@@ -1,51 +1,40 @@
-# Stage 1: Install dependencies and build the app
-FROM node:20-alpine AS build-stage
+# Stage 1: Build the application
+FROM node:18-alpine AS builder
+
+# Set working directory
 WORKDIR /app
 
-# Install OpenSSL compatibility
-RUN apk add --no-cache openssl
-
-# Copy package.json and lock files to install dependencies
+# Copy package.json and package-lock.json
 COPY package*.json ./
-COPY prisma ./prisma
 
-# Install all dependencies (including dev dependencies) for the build
+# Install dependencies
 RUN npm install
 
-# Run Prisma generate with explicit schema path
-RUN npx prisma generate --schema=prisma/schema.prisma
-
-# Copy the rest of the application files
+# Copy the rest of the application code
 COPY . .
 
-# Increase memory limit for Node.js during build
-ENV NODE_OPTIONS="--max-old-space-size=2048"
-
-# Build the application
+# Build the Next.js application
 RUN npm run build
 
-# Stage 2: Production stage
-FROM node:20-alpine
-WORKDIR /app
-
-# Install OpenSSL compatibility
-RUN apk add --no-cache openssl
-
-# Copy package.json and lock files to install only production dependencies
-COPY package*.json ./
-RUN npm install --omit=dev
-
-# Copy Prisma schema and generated client
-COPY --from=build-stage /app/prisma ./prisma
-COPY --from=build-stage /app/node_modules/.prisma ./node_modules/.prisma
-
-# Copy the built app
-COPY --from=build-stage /app/next.config.mjs ./
-COPY --from=build-stage /app/.next ./.next
-COPY --from=build-stage /app/public ./public
+# Stage 2: Run the application
+FROM node:18-alpine AS runner
 
 # Set environment to production
 ENV NODE_ENV=production
 
-# Start the app
-CMD ["npm", "start"]
+# Set working directory
+WORKDIR /app
+
+# Copy necessary files from the builder stage
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+
+# Install only production dependencies
+RUN npm install --only=production
+
+# Expose port
+EXPOSE 3000
+
+# Start the Next.js application
+CMD ["npm", "run", "start"]
